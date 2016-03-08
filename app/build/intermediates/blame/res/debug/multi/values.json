@@ -1,5 +1,325 @@
 [
     {
+        "outputFile": "C:\\AndroidApps\\aacplayer-android-r25\\AAC-Player-AS\\app\\build\\intermediates\\res\\merged\\debug\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 53,
+                    "endOffset": 104
+                },
+                "from": {
+                    "file": "C:\\AndroidApps\\aacplayer-android-r25\\AAC-Player-AS\\app\\src\\main\\res\\values\\colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 109,
+                    "endColumn": 57,
+                    "endOffset": 162
+                },
+                "from": {
+                    "file": "C:\\AndroidApps\\aacplayer-android-r25\\AAC-Player-AS\\app\\src\\main\\res\\values\\colors.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 167,
+                    "endColumn": 47,
+                    "endOffset": 210
+                },
+                "from": {
+                    "file": "C:\\AndroidApps\\aacplayer-android-r25\\AAC-Player-AS\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 1,
+                        "startOffset": 52,
+                        "endColumn": 44,
+                        "endOffset": 95
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 215,
+                    "endColumn": 41,
+                    "endOffset": 252
+                },
+                "from": {
+                    "file": "C:\\AndroidApps\\aacplayer-android-r25\\AAC-Player-AS\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 1,
+                        "startOffset": 97,
+                        "endColumn": 38,
+                        "endOffset": 134
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 257,
+                    "endColumn": 46,
+                    "endOffset": 299
+                },
+                "from": {
+                    "file": "C:\\AndroidApps\\aacplayer-android-r25\\AAC-Player-AS\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 304,
+                    "endColumn": 57,
+                    "endOffset": 357
+                },
+                "from": {
+                    "file": "C:\\AndroidApps\\aacplayer-android-r25\\AAC-Player-AS\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 362,
+                    "endColumn": 60,
+                    "endOffset": 418
+                },
+                "from": {
+                    "file": "C:\\AndroidApps\\aacplayer-android-r25\\AAC-Player-AS\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 423,
+                    "endColumn": 62,
+                    "endOffset": 481
+                },
+                "from": {
+                    "file": "C:\\AndroidApps\\aacplayer-android-r25\\AAC-Player-AS\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 486,
+                    "endColumn": 61,
+                    "endOffset": 543
+                },
+                "from": {
+                    "file": "C:\\AndroidApps\\aacplayer-android-r25\\AAC-Player-AS\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 548,
+                    "endColumn": 65,
+                    "endOffset": 609
+                },
+                "from": {
+                    "file": "C:\\AndroidApps\\aacplayer-android-r25\\AAC-Player-AS\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 614,
+                    "endColumn": 44,
+                    "endOffset": 654
+                },
+                "from": {
+                    "file": "C:\\AndroidApps\\aacplayer-android-r25\\AAC-Player-AS\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 659,
+                    "endColumn": 55,
+                    "endOffset": 710
+                },
+                "from": {
+                    "file": "C:\\AndroidApps\\aacplayer-android-r25\\AAC-Player-AS\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 715,
+                    "endColumn": 53,
+                    "endOffset": 764
+                },
+                "from": {
+                    "file": "C:\\AndroidApps\\aacplayer-android-r25\\AAC-Player-AS\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 769,
+                    "endColumn": 52,
+                    "endOffset": 817
+                },
+                "from": {
+                    "file": "C:\\AndroidApps\\aacplayer-android-r25\\AAC-Player-AS\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 822,
+                    "endColumn": 54,
+                    "endOffset": 872
+                },
+                "from": {
+                    "file": "C:\\AndroidApps\\aacplayer-android-r25\\AAC-Player-AS\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 877,
+                    "endColumn": 48,
+                    "endOffset": 921
+                },
+                "from": {
+                    "file": "C:\\AndroidApps\\aacplayer-android-r25\\AAC-Player-AS\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 926,
+                    "endColumn": 51,
+                    "endOffset": 973
+                },
+                "from": {
+                    "file": "C:\\AndroidApps\\aacplayer-android-r25\\AAC-Player-AS\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 978,
+                    "endColumn": 57,
+                    "endOffset": 1031
+                },
+                "from": {
+                    "file": "C:\\AndroidApps\\aacplayer-android-r25\\AAC-Player-AS\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 1036,
+                    "endColumn": 48,
+                    "endOffset": 1080
+                },
+                "from": {
+                    "file": "C:\\AndroidApps\\aacplayer-android-r25\\AAC-Player-AS\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 1085,
+                    "endColumn": 60,
+                    "endOffset": 1141
+                },
+                "from": {
+                    "file": "C:\\AndroidApps\\aacplayer-android-r25\\AAC-Player-AS\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 1146,
+                    "endColumn": 62,
+                    "endOffset": 1204
+                },
+                "from": {
+                    "file": "C:\\AndroidApps\\aacplayer-android-r25\\AAC-Player-AS\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 23,
+                    "startColumn": 4,
+                    "startOffset": 1209,
+                    "endColumn": 63,
+                    "endOffset": 1268
+                },
+                "from": {
+                    "file": "C:\\AndroidApps\\aacplayer-android-r25\\AAC-Player-AS\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 24,
+                    "startColumn": 4,
+                    "startOffset": 1273,
+                    "endColumn": 66,
+                    "endOffset": 1335
+                },
+                "from": {
+                    "file": "C:\\AndroidApps\\aacplayer-android-r25\\AAC-Player-AS\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 25,
+                    "startColumn": 4,
+                    "startOffset": 1340,
+                    "endColumn": 72,
+                    "endOffset": 1408
+                },
+                "from": {
+                    "file": "C:\\AndroidApps\\aacplayer-android-r25\\AAC-Player-AS\\app\\src\\main\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 26,
+                    "startColumn": 4,
+                    "startOffset": 1413,
+                    "endLine": 31,
+                    "endColumn": 9,
+                    "endOffset": 1670
+                },
+                "from": {
+                    "file": "C:\\AndroidApps\\aacplayer-android-r25\\AAC-Player-AS\\app\\src\\main\\res\\values\\styles.xml"
+                }
+            }
+        ]
+    },
+    {
         "outputFile": "C:\\AndroidApps\\aacplayer-android-r25\\app\\build\\intermediates\\res\\merged\\debug\\values\\values.xml",
         "map": [
             {

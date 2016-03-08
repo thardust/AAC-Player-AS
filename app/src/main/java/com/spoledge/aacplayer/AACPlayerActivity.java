@@ -32,8 +32,12 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+//--> Arrows indicate the testing code for main_optional<--
 
 
 /**
@@ -41,6 +45,17 @@ import android.widget.TextView;
  */
 public class AACPlayerActivity extends Activity implements View.OnClickListener, PlayerCallback {
 
+    //-->
+
+    private ImageView btnPlay;
+    private ImageView btnExit;
+    private TextView txtArtist;
+    private TextView txtSong;
+    private boolean playing=false;
+
+    //Initialize "playing" when decoding starts. Careful with autoplaying.
+
+    //<--
     private History history;
     private AutoCompleteTextView urlView;
     private Button btnFaad2;
@@ -73,17 +88,17 @@ public class AACPlayerActivity extends Activity implements View.OnClickListener,
     public void playerStarted() {
         uiHandler.post( new Runnable() {
             public void run() {
-                txtBufAudio.setEnabled( false );
-                txtBufDecode.setEnabled( false );
-                btnFaad2.setEnabled( false );
-                btnFFmpeg.setEnabled( false );
-                btnOpenCORE.setEnabled( false );
-                btnMMSWMA.setEnabled( false );
-                btnStop.setEnabled( true );
-
-                txtPlayStatus.setText( R.string.text_buffering );
-                progress.setProgress( 0 );
-                progress.setVisibility( View.VISIBLE );
+//                txtBufAudio.setEnabled( false );
+//                txtBufDecode.setEnabled( false );
+//                btnFaad2.setEnabled( false );
+//                btnFFmpeg.setEnabled( false );
+//                btnOpenCORE.setEnabled( false );
+//                btnMMSWMA.setEnabled( false );
+//                btnStop.setEnabled( true );
+//
+//                txtPlayStatus.setText( R.string.text_buffering );
+//                progress.setProgress( 0 );
+//                progress.setVisibility( View.VISIBLE );
 
                 playerStarted = true;
             }
@@ -105,8 +120,8 @@ public class AACPlayerActivity extends Activity implements View.OnClickListener,
 
         uiHandler.post( new Runnable() {
             public void run() {
-                progress.setProgress( audioBufferSizeMs * progress.getMax() / audioBufferCapacityMs );
-                if (isPlaying) txtPlayStatus.setText( R.string.text_playing );
+                //progress.setProgress( audioBufferSizeMs * progress.getMax() / audioBufferCapacityMs );
+//                if (isPlaying) txtPlayStatus.setText( R.string.text_playing );
             }
         });
     }
@@ -115,13 +130,13 @@ public class AACPlayerActivity extends Activity implements View.OnClickListener,
     public void playerStopped( final int perf ) {
         uiHandler.post( new Runnable() {
             public void run() {
-                enableButtons();
-                btnStop.setEnabled( false );
-                txtBufAudio.setEnabled( true );
-                txtBufDecode.setEnabled( true );
-                txtStatus.setText( R.string.text_stopped );
-                txtPlayStatus.setText( "" + perf + " %" );
-                progress.setVisibility( View.INVISIBLE );
+                //enableButtons();
+               // btnStop.setEnabled( false );
+//                txtBufAudio.setEnabled( true );
+//                txtBufDecode.setEnabled( true );
+//                txtStatus.setText( R.string.text_stopped );
+//                txtPlayStatus.setText( "" + perf + " %" );
+//                progress.setVisibility( View.INVISIBLE );
 
                 playerStarted = false;
             }
@@ -159,16 +174,49 @@ public class AACPlayerActivity extends Activity implements View.OnClickListener,
     /**
      * Called when a view has been clicked.
      */
+   public void updateButtons()
+   {
+       ImageView buttonPlay;
+       buttonPlay = (ImageView) findViewById(R.id.btnStartStop);
+       if (playing) buttonPlay.setImageResource(R.drawable.pause);
+       else buttonPlay.setImageResource(R.drawable.play);
+   }
+
     public void onClick( View v ) {
+
         try {
             switch (v.getId()) {
+                //-->
+                case R.id.btnStartStop:
+                    if (playing) {
+                        stop();
+                        playing=false;
+                        this.updateButtons();
 
-                case R.id.view_main_button_faad2:
-                    start( Decoder.DECODER_FAAD2 );
-                    txtStatus.setText( R.string.text_using_FAAD2 );
-                    break; 
+                    }
+                    else
+                    {
+                        start( Decoder.DECODER_OPENCORE );
+                        playing=true;
+                        this.updateButtons();
+                    }
 
-                case R.id.view_main_button_ffmpeg:
+                    break;
+
+                case R.id.btnExit:
+                    Intent intent = new Intent(Intent.ACTION_MAIN);
+                    intent.addCategory(Intent.CATEGORY_HOME);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                    break;
+                //<--
+
+//               case R.id.view_main_button_faad2:
+//                    start( Decoder.DECODER_FAAD2 );
+//                    txtStatus.setText( R.string.text_using_FAAD2 );
+//                    break;
+
+               /*case R.id.view_main_button_ffmpeg:
                     start( Decoder.DECODER_FFMPEG );
                     txtStatus.setText( R.string.text_using_FFmpeg );
                     break; 
@@ -176,12 +224,12 @@ public class AACPlayerActivity extends Activity implements View.OnClickListener,
                 case R.id.view_main_button_opencore:
                     start( Decoder.DECODER_OPENCORE );
                     txtStatus.setText( R.string.text_using_OpenCORE );
-                    break; 
+                    break;
 
                 case R.id.view_main_button_mmswma:
                     start( Decoder.DECODER_FFMPEG_WMA );
                     txtStatus.setText( R.string.text_using_MMSWMA );
-                    break; 
+                    break; */
 
                 /*
                 case R.id.view_main_button_file:
@@ -192,9 +240,9 @@ public class AACPlayerActivity extends Activity implements View.OnClickListener,
                     break;
                 */
 
-                case R.id.view_main_button_stop:
-                    stop();
-                    break;
+//               case R.id.view_main_button_stop:
+//                    stop();
+//                    break;
             }
         }
         catch (Exception e) {
@@ -209,38 +257,47 @@ public class AACPlayerActivity extends Activity implements View.OnClickListener,
 
     @Override
     protected void onCreate( Bundle savedInstanceState ) {
-        super.onCreate( savedInstanceState );
+        super.onCreate(savedInstanceState);
 
-        setContentView( R.layout.main );
+        setContentView( R.layout.main_optional );
 
-        btnFaad2 = (Button) findViewById( R.id.view_main_button_faad2 );
-        btnFFmpeg = (Button) findViewById( R.id.view_main_button_ffmpeg );
-        btnOpenCORE = (Button) findViewById( R.id.view_main_button_opencore );
-        btnMMSWMA = (Button) findViewById( R.id.view_main_button_mmswma );
-        //Button b3 = (Button) findViewById( R.id.view_main_button_file );
-        btnStop = (Button) findViewById( R.id.view_main_button_stop );
+        //--->
+
+        btnPlay = (ImageView) findViewById( R.id.btnStartStop );
+        btnPlay.setOnClickListener( this );
+        btnExit = (ImageView) findViewById( R.id.btnExit );
+        btnExit.setOnClickListener( this );
+
+        //<---
+
+//        btnFaad2 = (Button) findViewById( R.id.view_main_button_faad2 );
+//        btnFFmpeg = (Button) findViewById( R.id.view_main_button_ffmpeg );
+//        btnOpenCORE = (Button) findViewById( R.id.view_main_button_opencore );
+//        btnMMSWMA = (Button) findViewById( R.id.view_main_button_mmswma );
+//        //Button b3 = (Button) findViewById( R.id.view_main_button_file );
+//        btnStop = (Button) findViewById( R.id.view_main_button_stop );
 
         urlView = (AutoCompleteTextView) findViewById( R.id.view_main_edit_url );
-        txtStatus = (TextView) findViewById( R.id.view_main_text_what );
-        txtPlayStatus = (TextView) findViewById( R.id.view_main_text_status );
-        txtBufAudio = (EditText) findViewById( R.id.view_main_text_bufaudio );
-        txtBufDecode = (EditText) findViewById( R.id.view_main_text_bufdecode );
-
-        progress = (ProgressBar) findViewById( R.id.view_main_progress );
-
-        txtBufAudio.setText( String.valueOf( AACPlayer.DEFAULT_AUDIO_BUFFER_CAPACITY_MS ));
-        txtBufDecode.setText( String.valueOf( AACPlayer.DEFAULT_DECODE_BUFFER_CAPACITY_MS ));
-
-        btnFaad2.setOnClickListener( this );
-        btnFFmpeg.setOnClickListener( this );
-        btnOpenCORE.setOnClickListener( this );
-        btnMMSWMA.setOnClickListener( this );
-        //b3.setOnClickListener( this );
-        btnStop.setOnClickListener( this );
+//        txtStatus = (TextView) findViewById( R.id.view_main_text_what );
+//        txtPlayStatus = (TextView) findViewById( R.id.view_main_text_status );
+//        txtBufAudio = (EditText) findViewById( R.id.view_main_text_bufaudio );
+//        txtBufDecode = (EditText) findViewById( R.id.view_main_text_bufdecode );
+//
+//        progress = (ProgressBar) findViewById( R.id.view_main_progress );
+//
+//        txtBufAudio.setText( String.valueOf( AACPlayer.DEFAULT_AUDIO_BUFFER_CAPACITY_MS ));
+//        txtBufDecode.setText( String.valueOf( AACPlayer.DEFAULT_DECODE_BUFFER_CAPACITY_MS ));
+//
+//        btnFaad2.setOnClickListener( this );
+//        btnFFmpeg.setOnClickListener( this );
+//        btnOpenCORE.setOnClickListener( this );
+//        btnMMSWMA.setOnClickListener( this );
+//        //b3.setOnClickListener( this );
+//        btnStop.setOnClickListener( this );
 
         dfeatures = ArrayDecoder.getFeatures();
 
-        enableButtons();
+//        enableButtons();
 
         history = new History( this );
         history.read();
@@ -258,8 +315,9 @@ public class AACPlayerActivity extends Activity implements View.OnClickListener,
             history.addUrl( "mms://wmc1.den.liquidcompass.net/WTAWAM" );
         }
 
-        urlView.setAdapter( history.getArrayAdapter());
+        //urlView.setAdapter( history.getArrayAdapter());
         uiHandler = new Handler();
+
     }
 
 
@@ -281,11 +339,12 @@ public class AACPlayerActivity extends Activity implements View.OnClickListener,
     // Private
     ////////////////////////////////////////////////////////////////////////////
 
+    //Set for Top Latino
     private void start( int decoder ) {
         stop();
         aacPlayer = new ArrayAACPlayer( ArrayDecoder.create( decoder ), this,
-                                        getInt( txtBufAudio ), getInt( txtBufDecode ));
-        aacPlayer.playAsync( getUrl());
+                                        1500, 700);
+        aacPlayer.playAsync( "http://online.radiodifusion.net:8020/");
     }
 
 
@@ -295,25 +354,25 @@ public class AACPlayerActivity extends Activity implements View.OnClickListener,
     }
 
 
-    private String getUrl() {
-        String ret = urlView.getText().toString();
-
-        history.addUrl( ret );
-
-        return ret;
-    }
-
-
-    private void enableButtons() {
-        if ((dfeatures & Decoder.DECODER_FAAD2) != 0) btnFaad2.setEnabled( true );
-        if ((dfeatures & Decoder.DECODER_FFMPEG) != 0) btnFFmpeg.setEnabled( true );
-        if ((dfeatures & Decoder.DECODER_OPENCORE) != 0) btnOpenCORE.setEnabled( true );
-        if ((dfeatures & Decoder.DECODER_FFMPEG_WMA) != 0) btnMMSWMA.setEnabled( true );
-    }
+//    private String getUrl() {
+//        String ret = urlView.getText().toString();
+//
+//        history.addUrl( ret );
+//
+//        return ret;
+//    }
 
 
-    private int getInt( EditText et ) {
-        return Integer.parseInt( et.getText().toString());
-    }
+//    private void enableButtons() {
+//        if ((dfeatures & Decoder.DECODER_FAAD2) != 0) btnFaad2.setEnabled( true );
+//        if ((dfeatures & Decoder.DECODER_FFMPEG) != 0) btnFFmpeg.setEnabled( true );
+//        if ((dfeatures & Decoder.DECODER_OPENCORE) != 0) btnOpenCORE.setEnabled( true );
+//        if ((dfeatures & Decoder.DECODER_FFMPEG_WMA) != 0) btnMMSWMA.setEnabled( true );
+//    }
+
+
+//    private int getInt( EditText et ) {
+//        return Integer.parseInt( et.getText().toString());
+//    }
 }
 

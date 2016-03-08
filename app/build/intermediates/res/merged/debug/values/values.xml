@@ -2,8 +2,8 @@
 <resources>
     <color name="button_main_color">#ff324f85</color>
     <drawable name="main_background">#ff1f293e</drawable>
-    <string name="app_name">AAC Player</string>
-    <string name="app_version">0.8</string>
+    <string name="app_name">Top Latino</string>
+    <string name="app_version">1</string>
     <string name="button_close">Close</string>
     <string name="button_faad2">Player I (FAAD2)</string>
     <string name="button_ffmpeg">Player II (FFmpeg)</string>

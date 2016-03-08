@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="5sp"
+    android:layout_marginLeft="5sp"
+    android:layout_marginRight="5sp"
+    android:layout_marginTop="0sp"
+    android:background="#ffffff">
+
+
+    <!--Menu Principal: Next Screen, Radio Name, Exit-->
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="0px"
+        android:layout_weight="64">
+
+
+
+        <!--Next Screen Start-->
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="fill_parent"
+            android:layout_weight="30"
+            android:orientation="vertical"></LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="0px"
+            android:layout_height="fill_parent"
+            android:layout_weight="60"
+            android:alpha="0.4">
+
+            <ImageView
+                android:id="@+id/btnNextScreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/switch_page" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="fill_parent"
+            android:layout_weight="61"
+            android:orientation="vertical"></LinearLayout>
+
+        <!--Next Screen Ends-->
+
+        <!--Vacio en medio-->
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0px"
+            android:layout_height="fill_parent"
+            android:layout_weight="270"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/radioTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="270"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textColor="#ffee9d53"
+                android:textSize="30dp"
+                android:layout_gravity="center_vertical" />
+        </LinearLayout>
+
+        <!--Vacio en medio ends-->
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="fill_parent"
+            android:layout_weight="61"
+            android:orientation="vertical"></LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="0px"
+            android:layout_height="fill_parent"
+            android:layout_weight="60"
+            android:alpha="0.4">
+
+            <ImageView
+                android:id="@+id/btnExit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/exit" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="fill_parent"
+            android:layout_weight="30"
+            android:orientation="vertical"></LinearLayout>
+
+
+    </LinearLayout>
+
+    <!--Contenido Principal: Imagen, Metadata-->
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="0px"
+        android:layout_weight="300"
+        android:layout_gravity="center_horizontal"
+        >
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp" />
+    </RelativeLayout>
+
+    <!--Control de Música: Previous, PauseOrPlay, Next-->
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="104">
+
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="fill_parent"
+            android:layout_weight="97"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="10dp"
+            android:layout_weight="35"
+            android:alpha="0.4"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/previous_btn"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:src="@drawable/previous"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="fill_parent"
+            android:layout_weight="23"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="10dp"
+            android:layout_weight="40"
+            android:alpha="0.4"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/btnStartStop"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:src="@drawable/play" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="fill_parent"
+            android:layout_weight="23"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="10dp"
+            android:layout_weight="35"
+            android:alpha="0.4"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/next_btn"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:src="@drawable/next"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="fill_parent"
+            android:layout_weight="97"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:gravity="center">
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
